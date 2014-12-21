@@ -38,10 +38,10 @@ class TimezonePlugin extends phplistPlugin
     public $enabled = 1;
     public $settings = array(
         'timezone_php' => array (
-          'value' => 'Europe/London',
+          'value' => '',
           'description' => 'php timezone',
           'type' => 'text',
-          'allowempty' => false,
+          'allowempty' => true,
           'category'=> 'Timezone',
         )
     );
