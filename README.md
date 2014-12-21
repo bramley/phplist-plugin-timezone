@@ -2,11 +2,13 @@
 
 ## Description ##
 
-This plugin allows you to set the php and the mysql timezones separately.
+This plugin allows you to set the php and the mysql timezones.
 phplist lets you set the timezone using a config file parameter, SYSTEM_TIMEZONE, but that has to be a value that is valid for both
 php and for mysql, such as 'Australia/Sydney'. This requires mysql to support time zone information tables, which often is not the case.
 
-The plugin adds an item to the Config menu for a page that displays the php timezone and time, and the mysql timezone and time.
+This plugin sets the mysql timezone using an offset calculated from the php timezone.
+
+The plugin also adds an item to the Config menu for a page that displays the php timezone and time, and the mysql timezone and time.
 
 ## Installation ##
 
@@ -42,9 +44,8 @@ This should contain
 Then click the small orange icon to enable the plugin.
 
 ## Configuration ##
-In the Timezone group on the Settings page you can specify the timezones for php and for mysql.
-The php value should be similar to 'Australia/Sydney'. See <http://php.net/manual/en/timezones.php> for the supported timezones.
-The mysql value should be an offset from UTC, such as "+11:00" for Sydney.
+In the Timezone group on the Settings page you can specify the php timezones.
+This should be a value similar to 'Australia/Sydney'. See <http://php.net/manual/en/timezones.php> for the supported timezones.
 
 ## Donation ##
 
@@ -55,4 +56,5 @@ This plugin is free but if you install and find it useful then a donation to sup
 ## Version history ##
 
     version     Description
+    2014-12-21  Set mysql timezone to offset calculated from the php timezone.
     2014-12-04  Initial release

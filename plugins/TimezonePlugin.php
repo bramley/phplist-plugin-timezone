@@ -36,7 +36,15 @@ class TimezonePlugin extends phplistPlugin
     public $authors = 'Duncan Cameron';
     public $description = 'Allows you to set the php and mysql timezones.';
     public $enabled = 1;
-    public $settings;
+    public $settings = array(
+        'timezone_php' => array (
+          'value' => 'Europe/London',
+          'description' => 'php timezone',
+          'type' => 'text',
+          'allowempty' => false,
+          'category'=> 'Timezone',
+        )
+    );
     public $topMenuLinks = array(
         'displaytz' => array('category' => 'config'),
     );
@@ -50,39 +58,24 @@ class TimezonePlugin extends phplistPlugin
         $this->version = (is_file($f = $this->coderoot . self::VERSION_FILE))
             ? file_get_contents($f)
             : '';
-        $this->settings = array(
-            'timezone_php' => array (
-              'value' => 'Europe/London',
-              'description' => 'php timezone',
-              'type' => 'text',
-              'allowempty' => false,
-              'category'=> 'Timezone',
-            ),
-            'timezone_mysql' => array (
-              'value' => '+00:00',
-              'description' => 'mysql timezone',
-              'type' => 'text',
-              'allowempty' => false,
-              'category'=> 'Timezone',
-            )
-        );
         parent::__construct();
     }
 
     public function activate()
     {
-        $tz = sql_escape(getConfig('timezone_mysql'));
-        Sql_Query("set time_zone = '$tz'");
-        $result = Sql_Fetch_Row_Query('select @@session.time_zone');
-
-        if ($result[0] != $tz) {
-            print "Error setting mysql timezone, $tz {$result[0]}" . '<br/>';
-        }
-
         $tz = getConfig('timezone_php');
         
-        if (!date_default_timezone_set($tz)) {
-            print "Error setting php timezone, $tz" . '<br/>';
+        if ($tz == '') {
+            return;
         }
+
+        if (!date_default_timezone_set($tz)) {
+            echo "Error setting php timezone, $tz" . '<br/>';
+            return;
+        }
+
+        $dt = new DateTime();
+        $utcOffset = $dt->format('P');
+        Sql_Query("set time_zone = '$utcOffset'");
     }
 }

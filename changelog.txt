@@ -1,2 +1,5 @@
+version 2014-12-21
+      set mysql timezone to offset calculated from php timezone
+
 version 2014-12-04
       Initial release
