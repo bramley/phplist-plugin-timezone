@@ -78,4 +78,9 @@ class TimezonePlugin extends phplistPlugin
         $utcOffset = $dt->format('P');
         Sql_Query("set time_zone = '$utcOffset'");
     }
+
+    public function adminmenu()
+    {
+        return $this->pageTitles;
+    }
 }
