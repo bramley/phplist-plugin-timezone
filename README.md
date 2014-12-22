@@ -44,7 +44,7 @@ This should contain
 Then click the small orange icon to enable the plugin.
 
 ## Configuration ##
-In the Timezone group on the Settings page you can specify the php timezones.
+In the Timezone group on the Settings page you can specify the php timezone.
 This should be a value similar to 'Australia/Sydney'. See <http://php.net/manual/en/timezones.php> for the supported timezones.
 
 ## Donation ##

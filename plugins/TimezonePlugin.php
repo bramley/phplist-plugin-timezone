@@ -39,7 +39,7 @@ class TimezonePlugin extends phplistPlugin
     public $settings = array(
         'timezone_php' => array (
           'value' => '',
-          'description' => 'php timezone',
+          'description' => 'php timezone (leave empty to use the system value)',
           'type' => 'text',
           'allowempty' => true,
           'category'=> 'Timezone',
@@ -75,8 +75,8 @@ class TimezonePlugin extends phplistPlugin
         }
 
         $dt = new DateTime();
-        $utcOffset = $dt->format('P');
-        Sql_Query("set time_zone = '$utcOffset'");
+        $gmtOffset = $dt->format('P');
+        Sql_Query("set time_zone = '$gmtOffset'");
     }
 
     public function adminmenu()
