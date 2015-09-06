@@ -63,6 +63,7 @@ class TimezonePlugin extends phplistPlugin
 
     public function activate()
     {
+        parent::activate();
         $tz = getConfig('timezone_php');
         
         if ($tz == '') {
