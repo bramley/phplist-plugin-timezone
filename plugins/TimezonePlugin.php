@@ -1,6 +1,6 @@
 <?php
 /**
- * TimezonePlugin for phplist
+ * TimezonePlugin for phplist.
  * 
  * This file is a part of TimezonePlugin.
  *
@@ -14,16 +14,15 @@
  * GNU General Public License for more details.
  * 
  * @category  phplist
- * @package   TimezonePlugin
+ *
  * @author    Duncan Cameron
  * @copyright 2014-2016 Duncan Cameron
  * @license   http://www.gnu.org/licenses/gpl.html GNU General Public License, Version 3
  */
 
- /**
- * Registers the plugin with phplist
+/**
+ * Registers the plugin with phplist.
  */
-
 class TimezonePlugin extends phplistPlugin
 {
     const VERSION_FILE = 'version.txt';
@@ -38,13 +37,13 @@ class TimezonePlugin extends phplistPlugin
     public $enabled = 1;
     public $documentationUrl = 'https://resources.phplist.com/plugin/timezone';
     public $settings = array(
-        'timezone_php' => array (
+        'timezone_php' => array(
           'value' => '',
           'description' => 'php timezone (leave empty to use the system value)',
           'type' => 'text',
           'allowempty' => true,
-          'category'=> 'Timezone',
-        )
+          'category' => 'Timezone',
+        ),
     );
     public $topMenuLinks = array(
         'displaytz' => array('category' => 'config'),
@@ -66,13 +65,14 @@ class TimezonePlugin extends phplistPlugin
     {
         parent::activate();
         $tz = getConfig('timezone_php');
-        
+
         if ($tz == '') {
             return;
         }
 
         if (!date_default_timezone_set($tz)) {
             echo "Error setting php timezone, $tz" . '<br/>';
+
             return;
         }
 

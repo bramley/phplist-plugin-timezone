@@ -56,6 +56,7 @@ This plugin is free but if you install and find it useful then a donation to sup
 ## Version history ##
 
     version     Description
+    2.0.2+20160217
     2.0.1+20150906  Fix problem where settings are not displayed
     2014-12-21      Set mysql timezone to offset calculated from the php timezone.
     2014-12-04      Initial release
