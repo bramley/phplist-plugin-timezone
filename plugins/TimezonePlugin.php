@@ -16,7 +16,7 @@
  * @category  phplist
  * @package   TimezonePlugin
  * @author    Duncan Cameron
- * @copyright 2014 Duncan Cameron
+ * @copyright 2014-2016 Duncan Cameron
  * @license   http://www.gnu.org/licenses/gpl.html GNU General Public License, Version 3
  */
 
@@ -36,6 +36,7 @@ class TimezonePlugin extends phplistPlugin
     public $authors = 'Duncan Cameron';
     public $description = 'Allows you to set the php and mysql timezones.';
     public $enabled = 1;
+    public $documentationUrl = 'https://resources.phplist.com/plugin/timezone';
     public $settings = array(
         'timezone_php' => array (
           'value' => '',
@@ -49,7 +50,7 @@ class TimezonePlugin extends phplistPlugin
         'displaytz' => array('category' => 'config'),
     );
     public $pageTitles = array(
-        'displaytz' => 'Display timezone',
+        'displaytz' => 'Timezones',
     );
 
     public function __construct()
