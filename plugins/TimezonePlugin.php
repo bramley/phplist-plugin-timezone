@@ -1,7 +1,7 @@
 <?php
 /**
  * TimezonePlugin for phplist.
- * 
+ *
  * This file is a part of TimezonePlugin.
  *
  * This plugin is free software: you can redistribute it and/or modify
@@ -12,7 +12,7 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * @category  phplist
  *
  * @author    Duncan Cameron
@@ -36,15 +36,6 @@ class TimezonePlugin extends phplistPlugin
     public $description = 'Allows you to set the php and mysql timezones.';
     public $enabled = 1;
     public $documentationUrl = 'https://resources.phplist.com/plugin/timezone';
-    public $settings = array(
-        'timezone_php' => array(
-          'value' => '',
-          'description' => 'php timezone (leave empty to use the system value)',
-          'type' => 'text',
-          'allowempty' => true,
-          'category' => 'Timezone',
-        ),
-    );
     public $topMenuLinks = array(
         'displaytz' => array('category' => 'config'),
     );
@@ -59,6 +50,19 @@ class TimezonePlugin extends phplistPlugin
             ? file_get_contents($f)
             : '';
         parent::__construct();
+    }
+
+    /**
+     * Provide the dependencies for enabling this plugin.
+     *
+     * @return array
+     */
+    public function dependencyCheck()
+    {
+        return array(
+            'Common Plugin installed' => (phpListPlugin::isEnabled('CommonPlugin')),
+            'phpList version 3.3.0 or later' => version_compare(VERSION, '3.3') > 0,
+        );
     }
 
     public function activate()
