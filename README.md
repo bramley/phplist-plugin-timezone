@@ -52,6 +52,7 @@ This plugin is free but if you install and find it useful then a donation to sup
 ## Version history ##
 
     version     Description
+    2.1.1+20210629  Make the dependency check message regarding Common Plugin a bit clearer
     2.1.0+20181127  Use a drop-down list to select timezone
     2.0.2+20160217  Change menu caption
     2.0.1+20150906  Fix problem where settings are not displayed

@@ -1,3 +1,7 @@
+version 2.1.1+20210629
+      Make the dependency check message regarding Common Plugin a bit clearer.
+      Update the CS fixer rules to be applied.
+
 version 2.1.0+20181127
       Rename cs config file
       Use a drop-down list to select timezone
