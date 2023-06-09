@@ -12,29 +12,11 @@ This plugin sets the mysql timezone using an offset calculated from the php time
 
 ### Dependencies ###
 
-Requires phpList version 3.3.0 or later and also requires the Common Plugin to be installed.
-
-### Set the plugin directory ###
-
-The default plugin directory is `plugins` within the phplist `admin` directory but you can use a directory outside of the web root by
-changing the definition of `PLUGIN_ROOTDIR` in config.php.
-The benefit of this is that plugins will not be affected when you upgrade phplist.
+Requires phpList version 3.3.0 or later and also requires the Common Plugin to be enabled.
 
 ### Install through phplist ###
 
-Install on the Plugins page (menu Config > Manage Plugins) using the package URL `https://github.com/bramley/phplist-plugin-timezone/archive/master.zip`.
-
-Then click the Enable button to enable the plugin.
-
-### Install manually ###
-
-Download the plugin zip file from <https://github.com/bramley/phplist-plugin-timezone/archive/master.zip>
-
-Expand the zip file, then copy the contents of the plugins directory to your phplist plugins directory.
-This should contain
-
-* the file TimezonePlugin.php
-* the directory TimezonePlugin
+Install on the Plugins page (menu Config > Manage Plugins) using the package URL `https://github.com/bramley/phplist-plugin-timezone/archive/master.zip`
 
 Then click the Enable button to enable the plugin.
 
@@ -52,6 +34,7 @@ This plugin is free but if you install and find it useful then a donation to sup
 ## Version history ##
 
     version     Description
+    2.1.2+20230609  Ensure that this plugin is activated after Common plugin and before other plugins
     2.1.1+20210629  Make the dependency check message regarding Common Plugin a bit clearer
     2.1.0+20181127  Use a drop-down list to select timezone
     2.0.2+20160217  Change menu caption

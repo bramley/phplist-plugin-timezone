@@ -60,7 +60,7 @@ class TimezonePlugin extends phplistPlugin
     public function dependencyCheck()
     {
         return array(
-            'Common Plugin must be enabled' => (phpListPlugin::isEnabled('CommonPlugin')),
+            'Common Plugin must be enabled' => phpListPlugin::isEnabled('CommonPlugin'),
             'phpList version 3.3.0 or later' => version_compare(VERSION, '3.3') > 0,
         );
     }

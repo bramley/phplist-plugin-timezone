@@ -1,3 +1,7 @@
+version 2.1.2+20230609
+      Ensure that this plugin is activated after Common plugin and before other plugins
+      CS Fixer changes
+
 version 2.1.1+20210629
       Make the dependency check message regarding Common Plugin a bit clearer.
       Update the CS fixer rules to be applied.
