@@ -34,7 +34,7 @@ class TimezonePlugin extends phplistPlugin
     public $name = 'Timezone plugin';
     public $authors = 'Duncan Cameron';
     public $description = 'Allows you to set the php and mysql timezones.';
-    public $enabled = 1;
+    public $priority = 90;
     public $documentationUrl = 'https://resources.phplist.com/plugin/timezone';
     public $topMenuLinks = array(
         'displaytz' => array('category' => 'config'),
